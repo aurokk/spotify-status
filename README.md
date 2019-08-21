@@ -19,15 +19,15 @@ dryRun={не отправлять сообщение в телегу}
 ```
 docker build -t xxx .
 
-docker run -d 
- -e country="Россия"\ 
- -e telegramBotApiKey="{ключ от бота}",\ 
- -e telegramChannel="{айди чата}",\ 
- -e telegramTextYes="Да",\ 
- -e telegramTextNo="Нет",\ 
- -e giphyApiKey="{ключ от гифи}",\ 
- -e giphyTextYes="Yes",\ 
- -e giphyTextNo="No",\ 
- -e dryRun=true\ 
- xxx xxx
+docker run -d \
+ -e country="Россия"\
+ -e telegramBotApiKey="{ключ от бота}"\
+ -e telegramChannel="{айди чата}"\
+ -e telegramTextYes="Да"\
+ -e telegramTextNo="Нет"\
+ -e giphyApiKey="{ключ от гифи}"\
+ -e giphyTextYes="Yes"\
+ -e giphyTextNo="No"\
+ -e dryRun=true\
+ xxx
 ```
