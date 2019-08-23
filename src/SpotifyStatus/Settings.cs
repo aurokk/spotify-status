@@ -1,6 +1,7 @@
 using System;
+using System.Linq;
 
-namespace SpotifyStatus.App
+namespace SpotifyStatus
 {
     public class Settings
     {
@@ -19,18 +20,16 @@ namespace SpotifyStatus.App
 
         public void ThrowIfInvalid()
         {
-            var properties = GetType().GetProperties();
-            foreach (var property in properties)
-            {
-                if (property.PropertyType == typeof(bool))
-                {
-                    continue;
-                }
+            var stringProperties = GetType()
+                .GetProperties()
+                .Where(x => x.PropertyType == typeof(string));
 
-                var value = property.GetValue(this) as string;
+            foreach (var stringProperty in stringProperties)
+            {
+                var value = stringProperty.GetValue(this) as string;
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new Exception($"Configuration parameter {property.Name} should be set");
+                    throw new Exception($"Configuration parameter {stringProperty.Name} should be set");
                 }
             }
         }

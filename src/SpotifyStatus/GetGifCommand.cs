@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using GiphyDotNet.Manager;
 using GiphyDotNet.Model.Parameters;
 
-namespace SpotifyStatus.App
+namespace SpotifyStatus
 {
     public class GetGifCommand
     {
