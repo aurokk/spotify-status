@@ -11,7 +11,7 @@ namespace SpotifyStatus
 {
     public class Function
     {
-        public async Task FunctionHandler(string input, ILambdaContext context)
+        public async Task FunctionHandler(ILambdaContext context)
         {
             // Build settings
             var settings = SettingsBuilder.Build();
